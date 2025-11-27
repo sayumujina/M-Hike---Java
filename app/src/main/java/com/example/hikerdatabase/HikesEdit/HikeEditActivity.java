@@ -174,9 +174,12 @@ public class HikeEditActivity extends AppCompatActivity {
         Intent intent = getIntent();
         DatabaseHelper dbHelper = new DatabaseHelper(this);
 
-        // If this is a new hike, set to the current index in the database + 1
+        // If this is a new hike, set the editHikeId to the one intent extra sent
         if (isEditMode) {
             editHikeId = intent.getExtras() != null ? intent.getExtras().getInt("hikeIdToEdit", -1) : -1;
+        }
+        else {
+            editHikeId = -1;
         }
     }
 
