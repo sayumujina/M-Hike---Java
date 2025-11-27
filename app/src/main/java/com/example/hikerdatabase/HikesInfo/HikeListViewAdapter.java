@@ -86,6 +86,29 @@ public class HikeListViewAdapter extends RecyclerView.Adapter<HikeListViewAdapte
             return true;
         });
 
+        // Handle checkboxes
+        holder.itemCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                if (!selectedHikes.contains(position)) {
+                    selectedHikes.add(position);
+                }
+            } else {
+                selectedHikes.remove(Integer.valueOf(position));
+            }
+
+            // If all items are selected,notifies the hike list to change "Select All" to "Deselect All"
+            // And vice versa
+            if (selectedHikes.size() == hikes.size()) {
+                if (hikeSelectionChangeListener != null) {
+                    hikeSelectionChangeListener.onHikeSelectionChanged(true);
+                }
+            } else {
+                if (hikeSelectionChangeListener != null) {
+                    hikeSelectionChangeListener.onHikeSelectionChanged(false);
+                }
+            }
+        });
+
         // Handle item selection
         holder.itemView.setOnClickListener(v -> {
             // Log.d("HikeListViewAdapter", "Clicked position: " + position);

@@ -107,9 +107,11 @@ public class ObservationEditFragment extends Fragment {
             observations.remove(position);
 
             // Refresh the adapter
-            observationsRecyclerView.setAdapter(observationAdapter);
+            observationAdapter.notifyItemRemoved(position);
         });
     }
+
+
 
     // Handle save button click to save the entire hike to the database
     private void onSaveObservationsClick(View view) {
