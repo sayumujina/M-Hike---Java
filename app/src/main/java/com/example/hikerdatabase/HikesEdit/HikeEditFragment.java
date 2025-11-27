@@ -163,7 +163,7 @@ public class HikeEditFragment extends Fragment {
                 editName.setText(hike.getName());
                 editLocation.setText(hike.getLocation());
                 editDate.setText(hike.getDate());
-                editLength.setText(hike.getLength());
+                editLength.setText(String.valueOf(hike.getLength()));
                 editDescription.setText(hike.getDescription());
 
                 // Set the parking availability toggle
@@ -241,7 +241,7 @@ public class HikeEditFragment extends Fragment {
         String name = editName.getText().toString();
         String location = editLocation.getText().toString();
         String date = editDate.getText().toString();
-        String length = editLength.getText().toString();
+        double length = Double.parseDouble(editLength.getText().toString());
         String isParkingAvailable = editParking.getCheckedButtonId() == R.id.hikeParkingAvailableButton ? "Yes" : "No";
         int difficulty = (int) editDifficulty.getValue();
         String description = editDescription.getText().toString();

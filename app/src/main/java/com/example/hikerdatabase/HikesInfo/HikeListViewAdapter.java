@@ -53,8 +53,8 @@ public class HikeListViewAdapter extends RecyclerView.Adapter<HikeListViewAdapte
             holder.templateHikeNameValue.setText(hike.getName() != null ? hike.getName() : "");
             holder.templateHikeLocationValue.setText(hike.getLocation() != null ? hike.getLocation() : "");
             holder.templateHikeDateValue.setText(hike.getDate() != null ? hike.getDate() : "");
-            holder.templateHikeLengthValue.setText(hike.getLength() != null ? hike.getLength() : "");
-            holder.templateHikeDifficultyValue.setText(String.valueOf(hike.getDifficulty()));
+            holder.templateHikeLengthValue.setText(String.valueOf(hike.getLength()));
+            holder.templateHikeDifficultyValue.setText(hike.getDifficulty() != 0 ? String.valueOf(hike.getDifficulty()) : "");
             holder.templateHikeParkingValue.setText(hike.getParkingAvailability() != null ? hike.getParkingAvailability() : "");
             holder.templateHikeDescriptionValue.setText(hike.getDescription() != null ? hike.getDescription() : "None");
             holder.templateHikeMembersValue.setText(hike.getHikeMembers() != null ? String.join(", ", hike.getHikeMembers()) : "None");

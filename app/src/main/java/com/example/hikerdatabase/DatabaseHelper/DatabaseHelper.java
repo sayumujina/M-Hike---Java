@@ -119,7 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Insert hike details into the database
     public void insertHikeDetails(String name, String location, String date,
-                                  String isParkingAvailable, String length,
+                                  String isParkingAvailable, double length,
                                   int difficulty, String[] hikeMembers, String[] gear, String description) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -138,7 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Update hike details in the database
     public boolean updateHikeDetails(int id, String name, String location, String date,
-                                  String isParkingAvailable, String length,
+                                  String isParkingAvailable, double length,
                                   int difficulty, String[] hikeMembers, String[] gear, String description) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -184,7 +184,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     result.getString(result.getColumnIndexOrThrow(HIKE_LOCATION_COLUMN)),
                     result.getString(result.getColumnIndexOrThrow(HIKE_DATE_COLUMN)),
                     result.getString(result.getColumnIndexOrThrow(HIKE_PARKING_COLUMN)),
-                    result.getString(result.getColumnIndexOrThrow(HIKE_LENGTH_COLUMN)),
+                    result.getDouble(result.getColumnIndexOrThrow(HIKE_LENGTH_COLUMN)),
                     result.getInt(result.getColumnIndexOrThrow(HIKE_DIFFICULTY_COLUMN)),
                     result.getString(result.getColumnIndexOrThrow(HIKE_MEMBERS_COLUMN)).split(","),
                     result.getString(result.getColumnIndexOrThrow(HIKE_GEAR_COLUMN)).split(","),
@@ -233,7 +233,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     results.getString(results.getColumnIndexOrThrow(HIKE_LOCATION_COLUMN)),
                     results.getString(results.getColumnIndexOrThrow(HIKE_DATE_COLUMN)),
                     results.getString(results.getColumnIndexOrThrow(HIKE_PARKING_COLUMN)),
-                    results.getString(results.getColumnIndexOrThrow(HIKE_LENGTH_COLUMN)),
+                    results.getDouble(results.getColumnIndexOrThrow(HIKE_LENGTH_COLUMN)),
                     results.getInt(results.getColumnIndexOrThrow(HIKE_DIFFICULTY_COLUMN)),
                     results.getString(results.getColumnIndexOrThrow(HIKE_MEMBERS_COLUMN)).split(","),
                     results.getString(results.getColumnIndexOrThrow(HIKE_GEAR_COLUMN)).split(","),

@@ -231,7 +231,7 @@ public class HikeListActivity extends AppCompatActivity {
                     randomisedLocation[randomLocation],
                     "2024-06-" + String.format("%02d", i),
                     (i % 2 == 0) ? "Yes" : "No",
-                    (5 + i) + " km",
+                    (5 + i),
                     (i % 5) + 1,
                     new String[] { randomisedName[randomName1], randomisedName[randomName2] },
                     new String[] { randomisedGear[randomGear1], randomisedGear[randomGear2], randomisedGear[randomGear3] },
@@ -282,7 +282,7 @@ public class HikeListActivity extends AppCompatActivity {
         return containsIgnoreCase(hike.getName(), keyword) ||
                 containsIgnoreCase(hike.getLocation(), keyword) ||
                 containsIgnoreCase(hike.getDate(), keyword) ||
-                containsIgnoreCase(hike.getLength(), keyword) ||
+                containsIgnoreCase(String.valueOf(hike.getLength()), keyword) ||
                 containsIgnoreCase(hike.getParkingAvailability(), keyword) ||
                 containsIgnoreCase(String.valueOf(hike.getDifficulty()), keyword) ||
                 containsIgnoreCase(hike.getDescription(), keyword) ||

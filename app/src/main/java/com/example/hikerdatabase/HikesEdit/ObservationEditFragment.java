@@ -201,7 +201,7 @@ public class ObservationEditFragment extends Fragment {
         String name = hikeDetails.getName();
         String location = hikeDetails.getLocation();
         String date = hikeDetails.getDate();
-        String length = hikeDetails.getLength();
+        double length = hikeDetails.getLength();
         String isParkingAvailable = hikeDetails.getParkingAvailability();
         int difficulty = hikeDetails.getDifficulty();
 
@@ -271,7 +271,7 @@ public class ObservationEditFragment extends Fragment {
             String name = hikeDetails.getName();
             String location = hikeDetails.getLocation();
             String date = hikeDetails.getDate();
-            String length = hikeDetails.getLength();
+            double length = hikeDetails.getLength();
             String isParkingAvailable = hikeDetails.getParkingAvailability();
             int difficulty = hikeDetails.getDifficulty();
 

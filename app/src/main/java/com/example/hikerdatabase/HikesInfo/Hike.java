@@ -6,14 +6,14 @@ public class Hike {
     private final String location;
     private final String date;
     private final String isParkingAvailable;
-    private final String length;
+    private final double length;
     private final int difficulty;
     private final String[] hikeMembers; // Optional
     private final String[] gear; // Optional
     private final String description; // Optional
 
     public Hike(int id, String name, String location, String date, String isParkingAvailable,
-                String length, int difficulty, String[] hikeMembers, String[] gear, String description) {
+                double length, int difficulty, String[] hikeMembers, String[] gear, String description) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -46,7 +46,7 @@ public class Hike {
         return isParkingAvailable;
     }
 
-    public String getLength() {
+    public double getLength() {
         return length;
     }
 
