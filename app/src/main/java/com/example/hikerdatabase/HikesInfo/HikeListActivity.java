@@ -58,21 +58,20 @@ public class HikeListActivity extends AppCompatActivity {
         // Set up action bar
         Toolbar toolbar = findViewById(R.id.hikeListLayoutToolbar);
         setSupportActionBar(toolbar);
+        databaseHelper = new DatabaseHelper(this);
+        // Retrieve all hikes and send it to the adapter
+        ArrayList<Hike> hikes = databaseHelper.getAllHikes();
 
         // Get the RecyclerView from the layout
         recyclerView = findViewById(R.id.hikeRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.requestLayout();
 
-        // Get the contact details from the database and displays it
-        databaseHelper = new DatabaseHelper(this);
-
         // Add test data
         // FOR TESTING ONLY
         // addTestData(databaseHelper);
 
-        // Retrieve all hikes and send it to the adapter
-        ArrayList<Hike> hikes = databaseHelper.getAllHikes();
+        // Displays the hike details
         hikeListViewAdapter = new HikeListViewAdapter(hikes);
         recyclerView.setAdapter(hikeListViewAdapter);
 
