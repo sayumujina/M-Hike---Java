@@ -354,9 +354,11 @@ public class ObservationEditFragment extends Fragment {
                 }
                 // Insert new observation if observation id does not exist
                 else {
+                    // Check if we're in edit mode or not to get the correct hike ID
+                    int hikeIdToUse = HikeEditActivity.getEditMode() ? HikeEditActivity.getEditHikeId() : dbHelper.getLatestHikeId();
                     Log.d("ObservationEditFragment", "Inserting new observation for hike ID: " + dbHelper.getLatestHikeId());
                     databaseHelper.insertObservation(
-                            dbHelper.getLatestHikeId(),
+                            hikeIdToUse,
                             observation.getObservationName(),
                             observation.getObservationDate(),
                             observation.getObservationTime(),
